@@ -7,6 +7,7 @@ public class Main{
         Weather weather = new Weather("Солнечно", "Сергей Черненко", 2024);
         System.out.println(socialNetwork);
         System.out.println(socialNetwork2);
+        System.out.println(socialNetwork3);
         System.out.println(game);
         System.out.println(weather);
         System.out.println("Кол-во запросов: " + Application.getCount());
