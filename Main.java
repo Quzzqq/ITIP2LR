@@ -1,8 +1,8 @@
 public class Main{
     public static void main(String[] args) {
         SocialNetwork socialNetwork = new SocialNetwork("Вконкате", "Сергей Черненко", 2019);
-        SocialNetwork socialNetwork2 = new SocialNetwork("Вконкате", "Даша", 2024);
-        SocialNetwork socialNetwork3 = new SocialNetwork("Вконкате", "Сергей Черненко", 2024);
+        SocialNetwork socialNetwork2 = new SocialNetwork("Вконкате", "Даша Самосвал", 2024);
+        SocialNetwork socialNetwork3 = new SocialNetwork("Вконкате", "Евгений Туберкулез", 2024);
         Game game = new Game("Dota 2", "Valve", 2013);
         Weather weather = new Weather("Солнечно", "Сергей Черненко", 2024);
         System.out.println(socialNetwork);
@@ -48,6 +48,8 @@ abstract class Application{
         return count;
     }
     public abstract void showInfromation();
+
+
 }
 class SocialNetwork extends Application{
     private static int countUsers = 0;
@@ -55,7 +57,7 @@ class SocialNetwork extends Application{
         super(name,developer,date);
         countUsers++;
     }
-    @Override
+
     public void showInfromation() {}
     
     @Override
@@ -71,6 +73,7 @@ class Game extends Application{
     public Game(String name, String developer, int date){
         super(name,developer,date);
     }
+
     public void showInfromation(){}
 
     @Override
