@@ -1,8 +1,8 @@
 public class Main{
     public static void main(String[] args) {
-        SocialNetwork socialNetwork = new SocialNetwork("Вконкате", "Сергей Черненко", 2019);
-        SocialNetwork socialNetwork2 = new SocialNetwork("Вконкате", "Даша Самосвал", 2024);
-        SocialNetwork socialNetwork3 = new SocialNetwork("Вконкате", "Евгений Туберкулез", 2024);
+        UsersCount socialNetwork = new UsersCount("Вконкате", "Сергей Черненко", 2019);
+        UsersCount socialNetwork2 = new UsersCount("Вконкате", "Даша Самосвал", 2024);
+        UsersCount socialNetwork3 = new UsersCount("Вконкате", "Евгений Туберкулез", 2024);
         Game game = new Game("Dota 2", "Valve", 2013);
         Weather weather = new Weather("Солнечно", "Сергей Черненко", 2024);
         System.out.println(socialNetwork);
@@ -49,14 +49,11 @@ abstract class Application{
         return count;
     }
     public abstract void showInfromation();
-
-
 }
+
 class SocialNetwork extends Application{
-    private static int countUsers = 0;
     public SocialNetwork(String name, String developer, int date){
         super(name,developer,date);
-        countUsers++;
     }
 
     public void showInfromation() {}
@@ -65,8 +62,22 @@ class SocialNetwork extends Application{
     public String toString() {
         return "Социальная сеть: " + getName() +
                ", Пользователь: " + getDeveloper() +
-               ", Год регистрации: " + getDate() +
-               ", Количество пользователей: " + countUsers;
+               ", Год регистрации: " + getDate();
+    }
+}
+
+class UsersCount extends SocialNetwork{
+    private static int countUsers = 0;
+    public UsersCount(String name, String developer, int date){
+        super(name, developer, date);
+        countUsers++;
+    }
+    @Override
+    public String toString() {
+        return "Социальная сеть: " + getName() +
+                ", Пользователь: " + getDeveloper() +
+                ", Год регистрации: " + getDate() +
+                ", Количество пользователей: " + countUsers;
     }
 }
 
